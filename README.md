@@ -27,6 +27,7 @@ The project workflow includes:
 - Responsive interface for desktop and mobile screens.
 
 🛠️ Technology Stack
+
 - Python — application and inference logic
 - Ultralytics YOLO — object detection model
 - Flask — web application framework
@@ -35,7 +36,9 @@ The project workflow includes:
 - Visual Studio Code — local development environment
   
 📁 Repository Structure
+
 pneumonia-detection-ai/
+
 ├── app.py
 ├── best.pt                 # Add your trained model locally; not committed to Git
 ├── requirements.txt
@@ -51,6 +54,7 @@ pneumonia-detection-ai/
         └── .gitkeep
         
 🧠 Model and Dataset Information
+
 The project history includes chest X-ray classification experiments and a later YOLOv8 oriented-bounding-box (OBB) training workflow. The latest OBB training setup used an Ultralytics YOLOv8n-OBB model and a dataset organized into train, valid, and test folders.
 
 Previously recorded OBB training configuration:
