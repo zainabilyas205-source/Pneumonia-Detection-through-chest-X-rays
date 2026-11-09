@@ -40,13 +40,22 @@ The project workflow includes:
 pneumonia-detection-ai/
 
 ├── app.py
-├── best.pt                 # Add your trained model locally; not committed to Git
+
+├── best.pt  
+
+# Add your trained model locally; not committed to Git
+
 ├── requirements.txt
+
 ├── .gitignore
+
 ├── README.md
+
 ├── LICENSE
+
 ├── templates/
 │   └── index.html
+
 └── static/
     ├── uploads/
     │   └── .gitkeep
@@ -66,6 +75,7 @@ Previously recorded OBB training configuration:
 - Training images: 2,182
 - Validation images: 279
 - Best weights output: best.pt
+  
 ⚠️These are project-history details, not a claim that the model is clinically validated. Confirm the exact run and metrics from your own training results before using them in a formal report.
 
 ⚙️ Setup and Installation
