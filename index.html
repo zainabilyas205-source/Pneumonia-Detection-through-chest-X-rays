@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Pneumonia Detection</title>
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --accent: #3498db;
+            --white: #ffffff;
+            --danger: #e74c3c;
+            --success: #27ae60;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            /* Modern Medical Gradient Background */
+            background: linear-gradient(135deg, #dae2f8 0%, #d6a4a4 100%); /* Light Purple-Blue to Soft Rose */
+            /* Alternately, for a more blue-ish medical feel: */
+            background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%);
+            background-attachment: fixed;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95); /* Slight transparency for a glass look */
+            width: 90%;
+            max-width: 900px;
+            padding: 40px;
+            border-radius: 25px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+            text-align: center;
+            margin: 20px;
+            backdrop-filter: blur(10px); /* Modern blur effect */
+        }
+
+        h1 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+
+        .upload-section {
+            background: #ffffff;
+            border: 2px dashed #3498db;
+            padding: 40px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .upload-section:hover {
+            background: #f0f7ff;
+            border-style: solid;
+        }
+
+        button {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
+        }
+
+        .results-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .image-card {
+            background: #fff;
+            padding: 15px;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        img {
+            width: 100%;
+            border-radius: 12px;
+            transition: 0.3s;
+        }
+
+        img:hover {
+            transform: scale(1.02);
+        }
+
+        .status-badge {
+            margin-top: 10px;
+            padding: 25px;
+            border-radius: 20px;
+            font-size: 24px;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+
+        .status-yes {
+            background-color: #fff5f5;
+            color: var(--danger);
+            border: 3px solid var(--danger);
+            animation: pulse 2s infinite;
+        }
+
+        .status-no {
+            background-color: #f0fff4;
+            color: var(--success);
+            border: 3px solid var(--success);
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+
+        @media (max-width: 650px) {
+            .results-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🫁 Pneumonia Detector</h1>
+    <p class="subtitle">Deep Learning based Chest X-Ray Analysis System</p>
+    
+    <div class="upload-section">
+        <form method="POST" enctype="multipart/form-data">
+            <input type="file" name="image" accept="image/*" required id="fileInput">
+            <br><br>
+            <button type="submit">Predict</button>
+        </form>
+    </div>
+
+    {% if original %}
+        <div class="status-badge {% if 'YES' in prediction %}status-yes{% else %}status-no{% endif %}">
+            {{ prediction }}
+            {% if confidence and confidence != 'Detected' %}
+                <div style="font-size: 14px; font-weight: 400; margin-top: 5px;">Confidence Score: {{ confidence }}%</div>
+            {% endif %}
+        </div>
+
+        <div class="results-grid">
+            <div class="image-card">
+                <p style="color:#7f8c8d; font-weight:600;">Original Image</p>
+                <img src="{{ original }}">
+            </div>
+            <div class="image-card">
+                <p style="color:#7f8c8d; font-weight:600;">AI Result</p>
+                <img src="{{ predicted }}">
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
