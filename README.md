@@ -150,7 +150,7 @@ Aman Sakhawat
 
 Software Engineering Project
 
-LinkedIn profile: .
+LinkedIn profile: https://www.linkedin.com/feed/update/urn:li:activity:7525488005629812737/
 
 📄 License
 
