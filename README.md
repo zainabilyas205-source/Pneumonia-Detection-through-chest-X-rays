@@ -53,17 +53,17 @@ pneumonia-detection-ai/
 
 ├── templates/
 
-│   └── index.html
+      │   └── index.html
 
 └── static/
 
-    ├── uploads/
+       ├── uploads/
     
-    │   └── .gitkeep
+             │   └── .gitkeep
     
-    └── results/
+       └── results/
     
-        └── .gitkeep
+                └── .gitkeep
         
 🧠 Model and Dataset Information
 
