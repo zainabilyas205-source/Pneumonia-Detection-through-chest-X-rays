@@ -1,4 +1,5 @@
 Pneumonia Detection Through Chest X-rays
+
 An academic AI and computer-vision project that explores the analysis of chest X-ray images using a trained Ultralytics YOLO model. The Flask web application lets users upload an X-ray and view the model output with highlighted detection regions.
 ⚠️ Important medical disclaimer: This is an educational research prototype, not a clinically validated medical device. Its output is not a diagnosis and must not be used to make medical decisions. Chest X-rays should be interpreted by qualified healthcare professionals.
 
