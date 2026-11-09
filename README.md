@@ -66,11 +66,7 @@ Previously recorded OBB training configuration:
 
 ⚙️ Setup and Installation
 
-1️⃣ Clone the Repository
-git clone https://github.com/YOUR-USERNAME/pneumonia-detection-ai.git
-cd pneumonia-detection-ai
-
-2️⃣ Create and Activate a Virtual Environment
+1️⃣  Create and Activate a Virtual Environment
 Windows Command Prompt:
 python -m venv venv
 venv\Scripts\activate
@@ -78,15 +74,15 @@ macOS / Linux:
 python3 -m venv venv
 source venv/bin/activate
 
-3️⃣ Install Dependencies
+2️⃣ Install Dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
 
-4️⃣ Add the Trained Model
+3️⃣ Add the Trained Model
 Copy your trained best.pt file into the repository's root directory, at the same level as app.py.
 The model file is intentionally excluded from Git because model weights can be large. If you want to distribute it, use a suitable model-hosting service or Git LFS, and check the dataset/model license before sharing.
 
-5️⃣ Run the Flask Application
+4️⃣ Run the Flask Application
 python app.py
 Open this address in your browser:
 http://127.0.0.1:5000/
@@ -132,7 +128,7 @@ Only use images you are authorized to process. Avoid uploading identifiable pati
 Zainab Ilyas 
 Aman Sakhawat
 Software Engineering Project
-Add your GitHub profile and LinkedIn profile links here.
+LinkedIn profile: .
 
 📄 License
 This repository's source code is provided under the MIT License in LICENSE. This does not automatically grant rights to the dataset or trained model weights. Check their separate licenses and terms.
