@@ -43,8 +43,6 @@ pneumonia-detection-ai/
 
 ├── best.pt  
 
-# Add your trained model locally; not committed to Git
-
 ├── requirements.txt
 
 ├── .gitignore
@@ -54,12 +52,17 @@ pneumonia-detection-ai/
 ├── LICENSE
 
 ├── templates/
+
 │   └── index.html
 
 └── static/
+
     ├── uploads/
+    
     │   └── .gitkeep
+    
     └── results/
+    
         └── .gitkeep
         
 🧠 Model and Dataset Information
@@ -136,13 +139,19 @@ Insert your verified plots, confusion matrix, and test-set metrics in the projec
 - Conduct validation with qualified medical and research professionals before considering any clinical use.
   
 🔐 Responsible Use and Privacy
+
 Only use images you are authorized to process. Avoid uploading identifiable patient information. Do not publish patient data, private medical images, or credentials in this repository. This project is intended for learning and research demonstration only.
 
 👩‍💻 Author
+
 Zainab Ilyas 
+
 Aman Sakhawat
+
 Software Engineering Project
+
 LinkedIn profile: .
 
 📄 License
+
 This repository's source code is provided under the MIT License in LICENSE. This does not automatically grant rights to the dataset or trained model weights. Check their separate licenses and terms.
